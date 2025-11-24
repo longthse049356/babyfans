@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 :root {
+  /* Font variables - defined by Next.js font loader in layout.tsx */
+  /* These are set dynamically via className in layout.tsx */
+  --font-geist-sans: system-ui, sans-serif;
+  --font-geist-mono: monospace;
+  --font-indie-flower: cursive;
+
   /* Light Mode: Clean and readable */
   --background: 0 0% 100%;
   /* Pure white for clarity */
