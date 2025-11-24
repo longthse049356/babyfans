@@ -6,25 +6,25 @@ import { Baby, Footprints, Smile } from "lucide-react";
 const milestones = [
   {
     id: 1,
-    title: "Hello World",
-    date: "Oct 15, 2023",
-    description: "Arrived safely at 3:45 AM",
+    title: "Chào thế giới",
+    date: "2 Tháng 2, 2025",
+    description: "Đến nơi an toàn lúc 12:55",
     icon: Baby,
     color: "text-blue-500",
   },
   {
     id: 2,
-    title: "First Smile",
-    date: "Nov 20, 2023",
-    description: "Smiled at mommy for the first time",
+    title: "Nụ cười đầu tiên",
+    date: "2 Tháng 2, 2025",
+    description: "Lần đầu tiên cười với mẹ",
     icon: Smile,
     color: "text-yellow-500",
   },
   {
     id: 3,
-    title: "First Steps",
-    date: "Coming Soon",
-    description: "Practicing every day!",
+    title: "Những bước đi đầu tiên",
+    date: "Sắp tới",
+    description: "Tập đi mỗi ngày!",
     icon: Footprints,
     color: "text-green-500",
   },
@@ -32,14 +32,17 @@ const milestones = [
 
 export function TimelinePreview() {
   return (
-    <section id="milestones" className="py-20 relative">
-      <div className="container px-4 md:px-6 relative z-10">
+    <section id="milestones" className="py-20 relative overflow-hidden">
+      {/* Decorative Background Element */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl -z-10"></div>
+
+      <div className="px-4 md:px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 font-handwriting">
-            My Journey
+            Hành trình của con
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Watching me grow, one milestone at a time.
+            Theo dõi con lớn lên, từng cột mốc một.
           </p>
         </div>
 
@@ -79,7 +82,7 @@ export function TimelinePreview() {
                 </div>
 
                 {/* Center Icon */}
-                <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-background border-4 border-primary shadow-lg">
+                <div className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-card border-4 border-primary shadow-lg">
                   <milestone.icon className={`w-6 h-6 ${milestone.color}`} />
                 </div>
 

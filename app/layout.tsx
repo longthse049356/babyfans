@@ -25,18 +25,19 @@ const indieFlower = Indie_Flower({
 export const metadata: Metadata = {
   title: "BabyFans - Hành trình khôn lớn",
   description:
-    "Welcome to BabyFans, a place to share and cherish baby moments.",
+    "Chào mừng đến với BabyFans, nơi chia sẻ và lưu giữ những khoảnh khắc đáng yêu của bé.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${indieFlower.variable} antialiased bg-background text-foreground`}
+        suppressHydrationWarning
       >
         <ThemeProvider
           attribute="class"
@@ -45,7 +46,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-screen relative z-10">{children}</main>
         </ThemeProvider>
       </body>
     </html>
