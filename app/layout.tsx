@@ -24,6 +24,9 @@ const indieFlower = Indie_Flower({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://babyfans.vercel.app"
+  ),
   title: "Đậu Nhỏ - Hành trình khôn lớn",
   description:
     "Chào mừng đến với thế giới của Đậu Nhỏ! Sinh ngày 02/02/2025, nặng 2.5kg, cao 46cm. Cùng chúng tôi ghi lại những khoảnh khắc đáng yêu, những cột mốc lớn và tất cả những điều ở giữa.",
@@ -51,7 +54,7 @@ export const metadata: Metadata = {
     title: "Đậu Nhỏ - Hành trình khôn lớn",
     description:
       "Chào mừng đến với thế giới của Đậu Nhỏ! Sinh ngày 02/02/2025, nặng 2.5kg, cao 46cm.",
-    images: ["/images/baby/IMG_1425.jpg"],
+    images: ["/images/baby/IMG_1454.jpg"],
   },
   robots: {
     index: true,
