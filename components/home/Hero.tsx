@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Heart } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -45,9 +46,12 @@ export function Hero() {
               variant="outline"
               size="lg"
               className="rounded-full px-8 text-lg h-12"
+              asChild
             >
-              Xem thư viện
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <Link href="/gallery">
+                Xem thư viện
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </motion.div>

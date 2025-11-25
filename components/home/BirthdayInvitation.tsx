@@ -92,23 +92,59 @@ const Balloon = ({
       <svg width="50" height="70" viewBox="0 0 50 70">
         <defs>
           <radialGradient id={`balloon-${color}-${startX}`} cx="30%" cy="30%">
-            <stop offset="0%" stopColor="white" stopOpacity="0.8" />
+            <stop offset="0%" stopColor="white" stopOpacity="0.9" />
+            <stop offset="50%" stopColor={color} stopOpacity="0.8" />
             <stop offset="100%" stopColor={color} />
           </radialGradient>
+          <linearGradient
+            id={`balloon-highlight-${color}-${startX}`}
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
+            <stop offset="0%" stopColor="white" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          </linearGradient>
         </defs>
+        {/* Main balloon body - more rounded */}
         <ellipse
           cx="25"
-          cy="25"
-          rx="22"
-          ry="28"
+          cy="24"
+          rx="20"
+          ry="24"
           fill={`url(#balloon-${color}-${startX})`}
         />
-        <polygon points="25,53 22,58 28,58" fill={color} />
+        {/* Highlight/shine effect */}
+        <ellipse
+          cx="20"
+          cy="18"
+          rx="8"
+          ry="10"
+          fill={`url(#balloon-highlight-${color}-${startX})`}
+        />
+        {/* Balloon knot at the top */}
+        <circle cx="25" cy="3" r="2.5" fill={color} />
+        <circle cx="25" cy="3" r="1.5" fill="rgba(0,0,0,0.2)" />
+        {/* String connection from knot to balloon */}
+        <line
+          x1="25"
+          y1="5.5"
+          x2="25"
+          y2="0"
+          stroke={color}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        {/* Bottom tie/knot */}
+        <polygon points="25,48 22,52 28,52" fill={color} />
+        {/* String from balloon to bottom */}
         <path
-          d="M25,58 Q30,65 25,70"
+          d="M25,52 Q30,60 25,70"
           stroke="#888"
-          strokeWidth="1"
+          strokeWidth="1.5"
           fill="none"
+          strokeLinecap="round"
         />
       </svg>
     </motion.div>
@@ -471,7 +507,7 @@ export function BirthdayInvitation() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 pt-20 md:pt-4 overflow-hidden"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 pt-20 md:pt-24 overflow-hidden"
           >
             {/* Backdrop */}
             <motion.div
