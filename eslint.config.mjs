@@ -39,6 +39,7 @@ const eslintConfig = defineConfig([
       "prefer-arrow-callback": "error",
       // Import rules
       "no-duplicate-imports": "error",
+      "react-hooks/purity": "off",
     },
   },
   // Override default ignores of eslint-config-next.
