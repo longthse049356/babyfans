@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Indie_Flower } from "next/font/google";
 
+import { BirthdayInvitation } from "@/components/home/BirthdayInvitation";
 import { Header } from "@/components/layout/Header";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -45,6 +46,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <BirthdayInvitation />
           <Header />
           <main className="min-h-screen relative z-10">{children}</main>
         </ThemeProvider>

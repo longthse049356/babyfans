@@ -489,7 +489,7 @@ export function BirthdayInvitation() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={openInvitation}
-          className="fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 bg-gradient-to-r from-pink-500 to-red-500 rounded-full shadow-lg flex items-center justify-center text-white"
+          className="fixed bottom-6 right-6 z-[9998] w-14 h-14 md:w-16 md:h-16 bg-gradient-to-r from-pink-500 to-red-500 rounded-full shadow-lg flex items-center justify-center text-white"
         >
           <Gift className="w-6 h-6 md:w-8 md:h-8" />
           <motion.div
@@ -507,7 +507,7 @@ export function BirthdayInvitation() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 pt-20 md:pt-24 overflow-hidden"
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-4 md:pt-24 overflow-hidden"
           >
             {/* Backdrop */}
             <motion.div
@@ -586,7 +586,7 @@ export function BirthdayInvitation() {
                   animate={{ scale: 1, y: 0 }}
                   exit={{ scale: 0, y: -100 }}
                   transition={{ type: "spring", damping: 20, stiffness: 100 }}
-                  className="relative z-10 w-full max-w-sm md:max-w-md mx-auto max-h-[85vh] overflow-y-auto"
+                  className="relative z-10 w-full max-w-sm md:max-w-md mx-auto max-h-[90vh] md:max-h-[85vh] overflow-y-auto"
                 >
                   {/* Confetti */}
                   <div className="fixed inset-0 pointer-events-none overflow-hidden">
@@ -661,31 +661,31 @@ export function BirthdayInvitation() {
                     <div className="h-2 bg-gradient-to-r from-pink-400 via-red-400 to-yellow-400" />
 
                     {/* Close & Music buttons */}
-                    <div className="absolute top-5 right-4 flex gap-2 z-20">
+                    <div className="absolute top-3 right-3 md:top-5 md:right-4 flex gap-2 z-20">
                       <motion.button
-                        className="w-10 h-10 rounded-full bg-white/80 shadow-md flex items-center justify-center text-gray-600 hover:text-primary"
+                        className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/90 md:bg-white/80 shadow-md flex items-center justify-center text-gray-600 hover:text-primary touch-manipulation"
                         onClick={toggleMusic}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                       >
                         {isPlaying ? (
-                          <Music className="w-5 h-5" />
+                          <Music className="w-4 h-4 md:w-5 md:h-5" />
                         ) : (
-                          <VolumeX className="w-5 h-5" />
+                          <VolumeX className="w-4 h-4 md:w-5 md:h-5" />
                         )}
                       </motion.button>
                       <motion.button
-                        className="w-10 h-10 rounded-full bg-white/80 shadow-md flex items-center justify-center text-gray-600 hover:text-red-500"
+                        className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/90 md:bg-white/80 shadow-md flex items-center justify-center text-gray-600 hover:text-red-500 touch-manipulation"
                         onClick={closeModal}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                       >
-                        <X className="w-5 h-5" />
+                        <X className="w-4 h-4 md:w-5 md:h-5" />
                       </motion.button>
                     </div>
 
                     {/* Card content */}
-                    <div className="p-4 md:p-6">
+                    <div className="p-3 md:p-6 sm:p-4">
                       {/* Header */}
                       <motion.div
                         className="text-center mb-4"
@@ -819,7 +819,7 @@ export function BirthdayInvitation() {
                       >
                         <Button
                           size="default"
-                          className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 text-white font-semibold px-6 py-5 rounded-full shadow-lg transform hover:scale-105 transition-transform"
+                          className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 text-white font-semibold px-6 py-4 md:py-5 rounded-full shadow-lg transform hover:scale-105 transition-transform touch-manipulation w-full sm:w-auto"
                           onClick={() => window.open("/guestbook", "_self")}
                         >
                           <Heart className="w-4 h-4 mr-2" />
